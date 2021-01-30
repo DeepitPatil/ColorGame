@@ -4,25 +4,76 @@
 }
 
 #header {
-  background-color: lightpink;
+  background-color: rgb(1, 108, 158);
   height: 30vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #container {
-  background-color: black;
+  background-color: rgb(25, 39, 39);
   height: 70vh;
   display: grid;
   grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
   align-items: center;
   justify-content: space-evenly;
+}
+
+#m1{
+  grid-column: 1 / span 3;
+  color: white;
+  font-family: 'Ubuntu', 'sans-serif';
+  text-align: center;
+}
+
+#m2{
+  grid-column: 1 / span 3;
+  color: white;
+  text-align: center;
+  font-family: 'Ubuntu', 'sans-serif';
+}
+
+#title{
+  font-family: "Kanit";
+  color: white;
+  font-size: 72px;
+}
+
+#header-clue{
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-size: 25px;
+  grid-column: 2;
+  text-align: center;
+}
+
+#tries{
+  color: white;
+  padding: 25px;
+  font-family: 'Ubuntu', 'sans-serif';
+}
+
+#button{
+  background-color: darkgoldenrod;
+  font-family: sans-serif;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  width: 100px;
+  align-items: center;
+  margin-right: 25px;
 }
 
 .tile {
   height: 200px;
   width: 200px;
   background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
