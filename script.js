@@ -6,6 +6,7 @@ var t5 = document.getElementById("5");
 var t6 = document.getElementById("6");
 var m1 = document.getElementById("m1");
 var m2 = document.getElementById("m2");
+var container = document.getElementById("container");
 var button = document.getElementById("button");
 var tries_disp = document.getElementById("tries");
 var x;
@@ -22,57 +23,59 @@ return color;
 }
 
 function newGame() {
-m1.textContent = "";
-m2.textContent = "";
-tries = 0;
-tries_disp.textContent = "Number of Tries : 0"
-document.getElementById("container").background = "#253939";
+    m1.style.fontSize = "30px"
+    m1.textContent = "Choose the correct color corresponding to the RGB value given above";
+    m2.textContent = "";
+    tries = 0;
+    tries_disp.textContent = "Number of Tries : 0"
+    document.getElementById("container").background = "#253939";
 
-t1.style.background = getRandomColor();
-t2.style.background = getRandomColor();
-t3.style.background = getRandomColor();
-t4.style.background = getRandomColor();
-t5.style.background = getRandomColor();
-t6.style.background = getRandomColor();
+    t1.style.background = getRandomColor();
+    t2.style.background = getRandomColor();
+    t3.style.background = getRandomColor();
+    t4.style.background = getRandomColor();
+    t5.style.background = getRandomColor();
+    t6.style.background = getRandomColor();
 
-t1.style.visibility = "visible";
-t2.style.visibility = "visible";
-t3.style.visibility = "visible";
-t4.style.visibility = "visible";
-t5.style.visibility = "visible";
-t6.style.visibility = "visible";
+    t1.style.visibility = "visible";
+    t2.style.visibility = "visible";
+    t3.style.visibility = "visible";
+    t4.style.visibility = "visible";
+    t5.style.visibility = "visible";
+    t6.style.visibility = "visible";
 
-x = Math.floor(Math.random() * 6 + 1);
+    x = Math.floor(Math.random() * 6 + 1);
 
-switch(x) {
-    case 1:
-        correctColor = t1.style.background;
-        break;
-    case 2:
-        correctColor = t2.style.background;
-        break;
-    case 3:
-        correctColor = t3.style.background;
-        break;
-    case 4:
-        correctColor = t4.style.background;
-        break;
-    case 5:
-        correctColor = t5.style.background;
-        break;
-    case 6:
-        correctColor = t6.style.background;
-        break;
-}
-console.log(x);
-console.log(correctColor);
+    switch(x) {
+        case 1:
+            correctColor = t1.style.background;
+            break;
+        case 2:
+            correctColor = t2.style.background;
+            break;
+        case 3:
+            correctColor = t3.style.background;
+            break;
+        case 4:
+            correctColor = t4.style.background;
+            break;
+        case 5:
+            correctColor = t5.style.background;
+            break;
+        case 6:
+            correctColor = t6.style.background;
+            break;
+    }
+    console.log(x);
+    console.log(correctColor);
 
-document.getElementById("header-clue").innerHTML = correctColor;
+    document.getElementById("header-clue").innerHTML = correctColor;
 }
 
 function gameOver(i) {
     console.log("One try "+i)
     m1.style.fontSize = "80px"
+    m2.style.fontSize = "25px"
     switch(i){
         case 1:
             m1.textContent = "Wow! That's Perfect!!!";
@@ -204,5 +207,57 @@ t6.addEventListener("click", function () {
 });
 
 button.addEventListener("click", function(){
+    document.getElementById("container").style.background = "rgb(25, 39, 39)";
     newGame();
 });
+
+t1.addEventListener("mouseover", function(){
+    t1.style.boxShadow = "0 4px 8px 0 "+t1.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t1.addEventListener("mouseout", function(){
+    t1.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+t2.addEventListener("mouseover", function(){
+    t2.style.boxShadow = "0 4px 8px 0 "+t2.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t2.addEventListener("mouseout", function(){
+    t2.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+t3.addEventListener("mouseover", function(){
+    t3.style.boxShadow = "0 4px 8px 0 "+t3.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t3.addEventListener("mouseout", function(){
+    t3.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+t4.addEventListener("mouseover", function(){
+    t4.style.boxShadow = "0 4px 8px 0 "+t4.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t4.addEventListener("mouseout", function(){
+    t4.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+t5.addEventListener("mouseover", function(){
+    t5.style.boxShadow = "0 4px 8px 0 "+t5.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t5.addEventListener("mouseout", function(){
+    t5.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+t6.addEventListener("mouseover", function(){
+    t6.style.boxShadow = "0 4px 8px 0 "+t6.style.background+", 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+t6.addEventListener("mouseout", function(){
+    t6.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+});
+
+button.addEventListener("mouseover", function(){
+    button.style.background = "green";
+});
+button.addEventListener("mouseout", function(){
+    button.style.background = "peru";
+});
+
+window.onload = newGame();
