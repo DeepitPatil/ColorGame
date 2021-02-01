@@ -73,9 +73,16 @@ function newGame() {
 }
 
 function gameOver(i) {
+    t1.style.visibility = "hidden";
+    t2.style.visibility = "hidden";
+    t3.style.visibility = "hidden";
+    t4.style.visibility = "hidden";
+    t5.style.visibility = "hidden";
+    t6.style.visibility = "hidden";
     console.log("One try "+i)
     m1.style.fontSize = "80px"
     m2.style.fontSize = "25px"
+    m2.style.background = correctColor;
     switch(i){
         case 1:
             m1.textContent = "Wow! That's Perfect!!!";
@@ -108,14 +115,7 @@ t1.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
     if (t1.style.background == correctColor) {
-        t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
     } else {
         t1.style.visibility = "hidden";
     }
@@ -125,14 +125,7 @@ t2.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
     if (t2.style.background == correctColor) {
-        t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
     } else {
         t2.style.visibility = "hidden";
     }
@@ -141,32 +134,18 @@ t2.addEventListener("click", function () {
 t3.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
-if (t3.style.background == correctColor) {
-    t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
+    if (t3.style.background == correctColor) {
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
-} else {
-    t3.style.visibility = "hidden";
-}
+    } else {
+        t3.style.visibility = "hidden";
+    }
 });
 
 t4.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
     if (t4.style.background == correctColor) {
-        t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
     } else {
         t4.style.visibility = "hidden";
     }
@@ -175,32 +154,18 @@ t4.addEventListener("click", function () {
 t5.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
-if (t5.style.background == correctColor) {
-    t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
+    if (t5.style.background == correctColor) {
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
-} else {
-    t5.style.visibility = "hidden";
-}
+    } else {
+        t5.style.visibility = "hidden";
+    }
 });
 
 t6.addEventListener("click", function () {
     tries += 1;
     tries_disp.textContent = "Number of Tries : "+tries;
     if (t6.style.background == correctColor) {
-        t1.style.visibility = "hidden";
-        t2.style.visibility = "hidden";
-        t3.style.visibility = "hidden";
-        t4.style.visibility = "hidden";
-        t5.style.visibility = "hidden";
-        t6.style.visibility = "hidden";
         gameOver(tries);
-        document.getElementById("container").style.background = correctColor;
     } else {
         t6.style.visibility = "hidden";
     }
@@ -261,3 +226,8 @@ button.addEventListener("mouseout", function(){
 });
 
 window.onload = newGame();
+
+browser.runtime.onMessage.addListener(message => {
+    console.log("background: onMessage", message);
+    return Promise.resolve("Dummy response to keep the console quiet");
+  });
