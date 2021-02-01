@@ -6,7 +6,7 @@
 #header {
   background-image: url("https://i.pinimg.com/originals/9c/a3/51/9ca3510054654b11cf5b89363a73880d.gif");
   background-repeat: no-repeat;
-  background-size: 200vh;
+  background-size: 100%;
   background-color: rgb(1, 108, 158);
   height: 30vh;
   display: grid;
@@ -42,7 +42,6 @@
   text-align: center;
   font-family: 'Ubuntu', 'sans-serif';
   text-shadow: 2px 2px 4px #000000;
-  width: 100%;
 }
 
 #title{
@@ -55,7 +54,7 @@
 #header-clue{
   font-family: 'Ubuntu', sans-serif;
   color: white;
-  font-size: 50px;
+  font-size: 25px;
   grid-column: 2;
   text-align: center;
   text-shadow: 2px 2px 4px #000000;
